@@ -24,6 +24,7 @@
 | **Feishu Docs** | Create, read, search, append, move documents |
 | **Feishu Calendar** | Create events, list schedules |
 | **Send files to phone** | Upload images/files to Feishu chat for review |
+| **Screenshot review** | Claude takes screenshots of local apps/web pages and sends to Feishu for product review from phone |
 | **Cross-session visibility** | Sessions run in tmux, can read each other |
 | **Auto-journaling** | Every session auto-summarized with tags and reflections |
 

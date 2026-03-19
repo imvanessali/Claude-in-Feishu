@@ -32,6 +32,7 @@ Phone (Feishu/Discord) → Local daemon → Claude Code CLI → Your Mac + Feish
 | **Feishu Docs** | Create, read, search, append, move documents |
 | **Feishu Calendar** | Create events, list calendars |
 | **Send files to phone** | Upload images/files directly to Feishu chat |
+| **Screenshot review** | Take screenshots of local apps, send to Feishu for mobile product review |
 | **Cross-session visibility** | All sessions run in tmux, can read each other |
 | **Session journals** | Stop hook auto-summarizes every session via Haiku |
 
