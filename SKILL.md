@@ -19,7 +19,7 @@ allowed-tools:
 ## Architecture
 
 ```
-Phone (Feishu/Discord) → Local daemon → Claude Code CLI → Your Mac + Feishu API
+Phone (Feishu) → Local daemon → Claude Code CLI → Your Mac + Feishu API
                                                          ↓
                                               Auto-journal on exit (Haiku)
 ```
@@ -54,7 +54,7 @@ If any fails, tell the user what to install and stop.
 
 ### Step 1: Choose IM Platform
 
-Ask: "你要连接哪个 IM 平台？(feishu / discord / telegram，可以逗号分隔选多个)"
+Ask: "你要连接哪个 IM 平台？(feishu / telegram，可以逗号分隔选多个)"
 
 Default: feishu
 
@@ -142,32 +142,18 @@ This will open a browser window for OAuth authorization. The user_access_token w
 
 If the user provides a calendar_id, save it to config.env as `CTI_FEISHU_CALENDAR_ID`.
 
-### Step 3: Discord Setup (if discord selected)
+### Step 3: Claude Settings
 
-**Step 3a**: Show instructions, ask for bot token:
-> 请创建 Discord Bot：
-> 1. 打开 https://discord.com/developers/applications → New Application
-> 2. 进入 Bot 页面 → Reset Token → 复制
-> 3. 开启 Message Content Intent
-> 4. 用 OAuth2 URL Generator 邀请到你的服务器（权限：Send Messages, Read Message History）
->
-> 请输入 Bot Token：
-
-**Step 3b**: Ask for allowed user IDs:
-> 你的 Discord User ID（开启开发者模式后右键自己 → Copy User ID）。留空允许所有人：
-
-### Step 4: Claude Settings
-
-**Step 4a**: Ask for default model:
+**Step 3a**: Ask for default model:
 > 默认使用哪个模型？(sonnet / opus，默认 sonnet)：
 
-**Step 4b**: Ask for working directory:
+**Step 3b**: Ask for working directory:
 > Claude Code 默认工作目录（直接回车使用 $HOME）：
 
-**Step 4c**: Ask for permission mode:
+**Step 3c**: Ask for permission mode:
 > 权限模式？(bypassPermissions = 不弹确认 / default = 每次确认，默认 bypassPermissions)：
 
-### Step 5: Write Config
+### Step 4: Write Config
 
 Based on collected answers, write `~/.claude-in-feishu/config.env`:
 ```bash
@@ -177,7 +163,7 @@ chmod 700 ~/.claude-in-feishu
 chmod 600 ~/.claude-in-feishu/config.env
 ```
 
-### Step 6: Install Dependencies & Build
+### Step 5: Install Dependencies & Build
 
 ```bash
 cd <skill_directory>
@@ -185,7 +171,7 @@ npm install
 npm run build
 ```
 
-### Step 7: Setup Journals
+### Step 6: Setup Journals
 
 Automatically:
 1. Create `~/.claude/journals/` directory
@@ -193,7 +179,7 @@ Automatically:
 3. Add Stop hook to `~/.claude/settings.json` (merge with existing hooks)
 4. Create INDEX.md
 
-### Step 8: Setup tmux Wrapper
+### Step 7: Setup tmux Wrapper
 
 Check if the claude() function already exists in ~/.zshrc or ~/.bashrc.
 If not, ask:
@@ -201,14 +187,14 @@ If not, ask:
 
 If yes, append the claude() function to the appropriate rc file.
 
-### Step 9: Setup launchd (auto-start)
+### Step 8: Setup launchd (auto-start)
 
 Ask:
 > 是否设置开机自启动？daemon 会在系统启动时自动运行。(y/n，默认 y)
 
 If yes, create and load the launchd plist.
 
-### Step 10: Validate & Start
+### Step 9: Validate & Start
 
 1. Run `scripts/doctor.sh` to validate everything
 2. Start the daemon with `scripts/daemon.sh start`
@@ -290,5 +276,4 @@ Shell function that auto-wraps `claude` in tmux sessions for cross-session visib
 - Node.js 20+
 - Python 3
 - tmux
-- A Feishu custom app (for Feishu integration)
-- Discord bot token (for Discord integration)
+- A Feishu custom app (create at https://open.feishu.cn/app)

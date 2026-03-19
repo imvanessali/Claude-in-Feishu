@@ -26,8 +26,7 @@
 1. Verify the bot token is valid: `/claude-to-im doctor`
 2. Check allowed user IDs in config -- if set, only listed users can interact
 3. For Telegram: ensure you've sent `/start` to the bot first
-4. For Discord: verify the bot has been invited to the server with message read permissions
-5. For Feishu: confirm the app has been approved and event subscriptions are configured
+4. For Feishu: confirm the app has been approved and event subscriptions are configured
 6. Check logs for incoming message events: `/claude-to-im logs 200`
 
 ## Permission timeout

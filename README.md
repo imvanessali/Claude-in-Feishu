@@ -5,7 +5,7 @@
 ## What it does
 
 ```
-📱 Phone (Feishu/Discord)
+📱 Phone (Feishu)
     ↓ send message
 🖥️ Local daemon (Node.js)
     ↓ spawn session
@@ -47,17 +47,11 @@ npm run build
 Create `~/.claude-in-feishu/config.env`:
 
 ```env
-# Channels (comma-separated: feishu, discord, telegram)
-CTI_ENABLED_CHANNELS=feishu
-
 # Feishu (create app at https://open.feishu.cn/app)
+CTI_ENABLED_CHANNELS=feishu
 CTI_FEISHU_APP_ID=your_app_id
 CTI_FEISHU_APP_SECRET=your_app_secret
 CTI_FEISHU_DOMAIN=https://open.feishu.cn
-
-# Discord (optional)
-CTI_DISCORD_BOT_TOKEN=your_bot_token
-CTI_DISCORD_ALLOWED_USERS=your_user_id
 
 # Claude settings
 CTI_DEFAULT_WORKDIR=/Users/yourname
@@ -128,7 +122,7 @@ bash scripts/daemon.sh start
 ## Usage
 
 ### From phone
-Just message the bot in Feishu/Discord. It will:
+Just message the bot in Feishu. It will:
 - Spawn a Claude Code session on your Mac
 - Execute whatever you ask
 - Send results (text, images, files) back to chat

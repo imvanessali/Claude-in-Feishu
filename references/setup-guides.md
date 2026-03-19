@@ -33,54 +33,6 @@ Leave empty to allow anyone who can message the bot.
 
 ---
 
-## Discord
-
-### Bot Token
-
-**How to create a Discord Bot and get the token:**
-1. Go to https://discord.com/developers/applications
-2. Click **"New Application"** → give it a name → click **"Create"**
-3. Go to the **"Bot"** tab on the left sidebar
-4. Click **"Reset Token"** → copy the token (you can only see it once!)
-
-**Required bot settings (on the Bot tab):**
-- Under **Privileged Gateway Intents**, enable:
-  - ✅ **Message Content Intent** (required to read message text)
-
-**Invite the bot to your server:**
-1. Go to the **"OAuth2"** tab → **"URL Generator"**
-2. Under **Scopes**, check: `bot`
-3. Under **Bot Permissions**, check: `Send Messages`, `Read Message History`, `View Channels`
-4. Copy the generated URL at the bottom and open it in your browser
-5. Select the server and click **"Authorize"**
-
-Token format: a long base64-like string (e.g. `MTIzNDU2Nzg5.Gxxxxx.xxxxxxxxxxxxxxxxxxxxxxxx`)
-
-### Allowed User IDs (optional)
-
-**How to find Discord User IDs:**
-1. In Discord, go to Settings → Advanced → enable **Developer Mode**
-2. Right-click on any user → **"Copy User ID"**
-
-Enter comma-separated IDs. Leave empty to allow anyone in the server.
-
-### Allowed Channel IDs (optional)
-
-**How to find Discord Channel IDs:**
-1. With Developer Mode enabled, right-click on any channel → **"Copy Channel ID"**
-
-Enter comma-separated IDs to restrict the bot to specific channels.
-Leave empty to allow all channels the bot can see.
-
-### Allowed Guild (Server) IDs (optional)
-
-**How to find Discord Server IDs:**
-1. With Developer Mode enabled, right-click on the server icon → **"Copy Server ID"**
-
-Enter comma-separated IDs. Leave empty to allow all servers the bot is in.
-
----
-
 ## Feishu / Lark
 
 ### App ID and App Secret

@@ -120,19 +120,6 @@ if [ -f "$CONFIG_FILE" ]; then
     fi
   fi
 
-  # --- Discord ---
-  if echo "$CTI_CHANNELS" | grep -q discord; then
-    DC_TOKEN=$(get_config CTI_DISCORD_BOT_TOKEN)
-    if [ -n "$DC_TOKEN" ]; then
-      if echo "${DC_TOKEN}" | grep -qE '^[A-Za-z0-9_-]{20,}\.'; then
-        check "Discord bot token format" 0
-      else
-        check "Discord bot token format (does not match expected pattern)" 1
-      fi
-    else
-      check "Discord bot token configured" 1
-    fi
-  fi
 fi
 
 # --- Log directory writable ---
